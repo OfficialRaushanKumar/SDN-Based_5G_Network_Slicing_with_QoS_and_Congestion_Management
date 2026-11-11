@@ -1,5 +1,6 @@
 __pycache__/
 *.py[cod]
 .venv-ryu/
+.venv-osken/
 results/run_*.csv
 results/run_*.json
