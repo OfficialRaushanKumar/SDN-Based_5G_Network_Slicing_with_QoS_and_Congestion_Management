@@ -1,0 +1,9 @@
+{
+  "link": {"capacity_mbps": 100, "delay_ms": 5},
+  "openflow_version": "OpenFlow13",
+  "slices": [
+    {"id": "broadband", "service": "Consumer mobile broadband", "src_host": "h1", "dst_host": "h2", "queue_id": 0, "min_mbps": 50, "max_mbps": 80, "latency_objective_ms": null, "priority": 2, "isolation": "Dedicated HTB queue; rate ceiling and minimum configured", "protocol": "tcp"},
+    {"id": "healthcare", "service": "Remote surgery / healthcare", "src_host": "h3", "dst_host": "h4", "queue_id": 1, "min_mbps": 20, "max_mbps": 30, "latency_objective_ms": 10, "priority": 1, "isolation": "Dedicated HTB queue; protected allocation and highest scheduling priority", "protocol": "tcp"},
+    {"id": "iot", "service": "Low-rate IoT sensors", "src_host": "h5", "dst_host": "h6", "queue_id": 2, "min_mbps": 10, "max_mbps": 20, "latency_objective_ms": 100, "priority": 3, "isolation": "Dedicated HTB queue; protected allocation and rate ceiling", "protocol": "tcp"}
+  ]
+}

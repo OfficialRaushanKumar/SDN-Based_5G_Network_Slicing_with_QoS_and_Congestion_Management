@@ -1,0 +1,5 @@
+# Ryu 4.34's setup hook patches setuptools' legacy easy_install API.
+# Keep build tools in this range and install with --no-build-isolation so
+# pip does not create an environment containing an incompatible latest setuptools.
+setuptools==67.6.1
+pbr==5.11.1

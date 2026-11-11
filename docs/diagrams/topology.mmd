@@ -1,0 +1,8 @@
+flowchart LR
+  h1[h1 broadband] --- s1[OVS s1]
+  h3[h3 healthcare] --- s1
+  h5[h5 IoT] --- s1
+  s1 <-->|single shared 100 Mbps bottleneck<br/>trunk port 4 at each switch| s2[OVS s2]
+  s2 --- h2[h2 broadband]
+  s2 --- h4[h4 healthcare]
+  s2 --- h6[h6 IoT]

@@ -1,0 +1,3 @@
+# Runtime controller requirement. See README for the pinned build-tool bootstrap
+# and --no-build-isolation install required by this legacy Ryu release.
+ryu==4.34

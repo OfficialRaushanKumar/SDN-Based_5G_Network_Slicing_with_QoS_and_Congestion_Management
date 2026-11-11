@@ -1,0 +1,19 @@
+flowchart TB
+  subgraph A[Application plane]
+    SM[Slice manager intent<br/>config/slices.json]
+  end
+  subgraph C[Control plane]
+    R[Ryu controller<br/>OpenFlow 1.3]
+  end
+  subgraph D[Data plane]
+    H1[h1 Broadband] --- S1[OVS s1]
+    H3[h3 Healthcare] --- S1
+    H5[h5 IoT] --- S1
+    S1 <-->|100 Mbps shared trunk<br/>HTB queues 0, 1, 2| S2[OVS s2]
+    S2 --- H2[h2 Broadband]
+    S2 --- H4[h4 Healthcare]
+    S2 --- H6[h6 IoT]
+  end
+  SM -->|validated slice requests| R
+  R -. OpenFlow rules and queue actions .-> S1
+  R -. OpenFlow rules and queue actions .-> S2
